@@ -8,4 +8,8 @@ public class StringLabTest {
         String str2 = str.replace(".","");
         System.out.println(str2);
     }
+    @Test
+    public void StringReplace1(){
+
+    }
 }
