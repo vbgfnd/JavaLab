@@ -19,4 +19,26 @@ public class StringLabTest {
         String str2 = str.replace("b","\"");
         System.out.println(str2);
     }
+    @Test
+    public void StringIndexTest(){
+        String str = "abca";
+        System.out.println(str.substring(0,1));
+    }
+    //测试 http://xxx.xxx/aaa 去掉 /aaa 算法
+    //	indexOf(String str, int fromIndex)
+    @Test
+    public void StringTest1(){
+        String str = "http://a";
+        Integer index = str.indexOf("/",8);
+        System.out.println(index);
+        String str1 = str.substring(index,str.length());
+        System.out.println(str1);
+        //减去字串不能用replace，容易引发如下bug
+        //String str2 = str.replace(str1, "");
+        //System.out.println(str2);
+        String str2 = str.substring(0,index);
+        System.out.println(str2);
+
+
+    }
 }
