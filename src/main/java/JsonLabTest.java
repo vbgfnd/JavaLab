@@ -1,3 +1,4 @@
+import com.google.gson.JsonElement;
 import com.google.gson.JsonNull;
 import com.google.gson.JsonObject;
 import org.junit.Test;
@@ -14,7 +15,7 @@ public class JsonLabTest {
         System.out.println(jsonObject);
 
         JsonObject tmpJsonObj = new JsonObject();
-        tmpJsonObj.addProperty("num",1);
+        tmpJsonObj.addProperty("num","dd,dd");
         jsonObject.add("json",tmpJsonObj);
         System.out.println(jsonObject.toString());
 
@@ -28,5 +29,27 @@ public class JsonLabTest {
     public void getClassTest(){
         JsonObject json = new JsonObject();
         System.out.println(json.getClass().getClass());
+    }
+
+    @Test
+    public void getJsonAarrayVal(){
+        String json = "{  " +
+                "\"ProjectId\":604800," +
+                "\"Type\":90," +
+                "\"UserGlobalKeyList\":[\"TuHpRkiHZx\"]" +
+                "}";
+        JsonElement jsonElement = new JsonParser().parse(json);
+        JsonObject jsonObject = jsonElement.getAsJsonObject();
+        System.out.println(jsonObject.toString());
+
+        String json2 = "{" +
+                "RegistryUser:{" +
+                "\"UinId\":\"100009374021\"," +
+                "\"OwnerUinId\":\"100009374013\"" +
+                "}" +
+                "}";
+        jsonElement = new JsonParser().parse(json2);
+        jsonObject = jsonElement.getAsJsonObject();
+        System.out.println(jsonObject.toString());
     }
 }

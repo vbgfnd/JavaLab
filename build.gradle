@@ -19,4 +19,6 @@ dependencies {
     compile group: 'junit', name: 'junit', version: '4.12'
     compile 'io.rest-assured:rest-assured:4.1.1'
     compile group: 'com.google.code.gson', name: 'gson', version: '2.2.4'
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
 }

@@ -8,7 +8,7 @@ public class RegexLabTest {
     @Test
     public void SimpleRegexTest(){
         String pattern = "^http(s|)://.+";
-        String str = "https://.";
+        String str = "https://";
         boolean istrue = Pattern.matches(pattern,str);
         Pattern r = Pattern.compile(pattern);
         Matcher m = r.matcher(str);
