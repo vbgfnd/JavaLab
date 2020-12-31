@@ -10,7 +10,17 @@ tasks.withType(JavaCompile){
     options.encoding = "UTF-8"
 }
 repositories {
-    mavenCentral()
+    mavenLocal()
+    maven {
+        url "https://mirrors.cloud.tencent.com/nexus/repository/maven-public/"
+    }
+    maven {
+        url "https://codingcorp-maven.pkg.coding.net/repository/registry/maven-releases/"
+        credentials {
+            username = 'maven-releases-1593520065677'
+            password = 'a28a1ba6d655017c81d06520af306009978d660c'
+        }
+    }
 }
 
 dependencies {
@@ -21,4 +31,5 @@ dependencies {
     compile group: 'com.google.code.gson', name: 'gson', version: '2.2.4'
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
     compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
+    compile "net.coding.api:coding-sdk-java:1.1.3"
 }

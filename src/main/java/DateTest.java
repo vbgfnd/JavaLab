@@ -21,4 +21,10 @@ public class DateTest {
         SimpleDateFormat dateFormat3 = new SimpleDateFormat("YYYY-MM-dd");
         System.out.println(dateFormat3.format(date3));
     }
+
+    class DateBaby {
+        public void test(){
+            return ;
+        }
+    }
 }
