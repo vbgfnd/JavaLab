@@ -1,5 +1,13 @@
 import org.junit.Test;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
+
 public class StringLabTest {
     //测试删除字串内指定字符
     @Test
@@ -52,4 +60,28 @@ public class StringLabTest {
         System.out.println("str2="+str2);
     }
 
+    @Test
+    public void StringAarryTest(){
+        String[] str = {"dd", "cc"};
+        List<String> list = new ArrayList<>(Arrays.asList("1", "2", "3"));
+
+        System.out.printf("%s", list.toString());
+    }
+    @Test
+    //测试字符串中的空是不是""表示
+    public void StringTest3() throws UnsupportedEncodingException {
+        /*String a = "";
+        String b = String.format("abc:%sccc", a);
+        System.out.println(b);
+        a = "bbb";
+        b = String.format("abc:%sccc", a);
+        System.out.println(b);*/
+
+        String url = "https://www.xte123st.com/?key=";
+        String xx = URLEncoder.encode(url, "UTF-8");
+        System.out.println(url);
+        System.out.println(xx);
+
+
+    }
 }

@@ -18,4 +18,17 @@ public class MapLabTest {
         String str1 = "a";
         Integer int1 = 1;
     }
+
+    public void testMap(Map<String, String> a){
+        a.put("testMap", "testMap");
+    }
+
+    @Test
+    public void test(){
+        Map<String, String>map = new HashMap<>();
+        testMap(map);
+
+        System.out.println(map.toString());
+
+    }
 }

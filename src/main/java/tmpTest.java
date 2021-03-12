@@ -8,6 +8,11 @@ import com.codingapi.common.profile.HttpProfile;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Properties;
+
 public class tmpTest {
     @Test
     public void test() throws CodingSDKException {
@@ -43,5 +48,22 @@ public class tmpTest {
             System.out.println(e.toString());
             System.out.println("ddd");
         }
+    }
+
+    @Test
+    public void test1(){
+        String CONFIG_PATH = System.getProperty("config.path", "config.properties");
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();
+        URL appResourceURL = loader.getResource(CONFIG_PATH);
+        Properties props = new Properties();
+
+        try (InputStream is = appResourceURL.openStream()) {
+            props.load(is);
+        } catch (IOException e) {
+            System.err.println("Fail to load config: " + CONFIG_PATH);
+        }
+
+        System.out.printf(props.getProperty("a"));
+        System.out.printf(props.getProperty("b"));
     }
 }

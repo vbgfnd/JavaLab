@@ -1,13 +1,20 @@
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ListLabTest {
     @Test
     public void ListTest(){
-        List<String> testUsers = new ArrayList<>();
-        System.out.println(testUsers.size());
+        //List<String> testUsers = new ArrayList<>();
+        //System.out.println(testUsers.size());
+
+        List<List<String>> test = new ArrayList<>();
+        List<String> test1 = Arrays.asList("dd");
+        test.add(test1);
+
+        System.out.printf(test.get(0).toString());
     }
     @Test
     public void JudgeListEqual(){
@@ -30,4 +37,6 @@ public class ListLabTest {
         System.out.printf(String.format("list1==list2?:%s", list1.equals(list2)));
         System.out.printf(String.format("list1==list3?:%s", list1.equals(list3)));
     }
+
+
 }
