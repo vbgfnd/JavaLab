@@ -8,9 +8,13 @@ import com.codingapi.common.profile.HttpProfile;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.InputStreamReader;
+import java.util.*;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Properties;
 
 public class tmpTest {
@@ -55,15 +59,32 @@ public class tmpTest {
         String CONFIG_PATH = System.getProperty("config.path", "config.properties");
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
         URL appResourceURL = loader.getResource(CONFIG_PATH);
-        Properties props = new Properties();
 
-        try (InputStream is = appResourceURL.openStream()) {
+        Properties props = new Properties();
+        try (InputStreamReader is = new InputStreamReader(appResourceURL.openStream(), "UTF-8")) {
             props.load(is);
         } catch (IOException e) {
             System.err.println("Fail to load config: " + CONFIG_PATH);
         }
+        for(int i = 1; i <= 2; i++){
+            String a = props.getProperty(String.format("case%d", i));
+            System.out.printf("a=%s \n", a);
+        }
 
-        System.out.printf(props.getProperty("a"));
-        System.out.printf(props.getProperty("b"));
     }
+
+    @Test
+    public void ObjectConvertTest(){
+        Object ob = 1;
+        System.out.printf("class=%s", ob.getClass().getSimpleName());
+        int i = (int)ob;
+        System.out.println((int)ob);
+
+        ob = new A("b");
+        System.out.printf("class=%s", ob.getClass().getSimpleName());
+        A a = (A)ob;
+        a.test();
+    }
+
+
 }

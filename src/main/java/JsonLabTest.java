@@ -33,11 +33,7 @@ public class JsonLabTest {
 
     @Test
     public void getJsonAarrayVal(){
-        String json = "{  " +
-                "\"ProjectId\":604800," +
-                "\"Type\":90," +
-                "\"UserGlobalKeyList\":[\"TuHpRkiHZx\"]" +
-                "}";
+        String json = "{  \"ProjectId\":604800, \"Type\":90, \"UserGlobalKeyList\":[]}";
         JsonElement jsonElement = new JsonParser().parse(json);
         JsonObject jsonObject = jsonElement.getAsJsonObject();
         System.out.println(jsonObject.toString());

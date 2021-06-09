@@ -12,9 +12,10 @@ public class ListLabTest {
 
         List<List<String>> test = new ArrayList<>();
         List<String> test1 = Arrays.asList("dd");
+        test1 = Arrays.asList("aa");
         test.add(test1);
 
-        System.out.printf(test.get(0).toString());
+        System.out.printf(test1.toString());
     }
     @Test
     public void JudgeListEqual(){

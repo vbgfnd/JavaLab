@@ -84,4 +84,12 @@ public class StringLabTest {
 
 
     }
+    @Test
+    public void StringTest4(){
+        String str = "null";
+
+        //System.out.println(str.isEmpty());
+        //System.out.println(str.toString());
+        System.out.println(str);
+    }
 }

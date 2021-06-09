@@ -26,9 +26,10 @@ public class MapLabTest {
     @Test
     public void test(){
         Map<String, String>map = new HashMap<>();
-        testMap(map);
+        Map<String, String>map1;
 
-        System.out.println(map.toString());
+
+        System.out.println(map.isEmpty());
 
     }
 }
