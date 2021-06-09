@@ -1,4 +1,4 @@
-import com.sun.prism.shader.DrawSemiRoundRect_RadialGradient_REPEAT_AlphaTest_Loader;
+
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;

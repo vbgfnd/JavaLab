@@ -1,5 +1,8 @@
 import org.junit.Test;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,6 +29,24 @@ public class TMP {
 
         for(Map.Entry<String, Object> entry : map.entrySet()){
             System.out.printf("key=%s,kindof=%s\n", entry.getKey(), entry.getValue().getClass().getSimpleName());
+        }
+    }
+
+    /**
+     * 【尝试动态生成类对象】
+     */
+    @Test
+    public void test2() throws IllegalAccessException, InstantiationException, NoSuchMethodException, InvocationTargetException {
+        A a = new B();
+
+        Class<?> ccc = a.getClass();
+        Object ob = ccc.newInstance();
+        Method method = ob.getClass().getDeclaredMethod("test");
+        method.invoke(ob);
+        Field[] fields = a.getClass().getDeclaredFields();
+        for(int i = 0; i < fields.length; i++){
+            System.out.printf("type=%s\n", fields[i].getType().toString());
+            System.out.printf("name=%s\n", fields[i].getName());
         }
 
     }
