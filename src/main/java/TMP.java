@@ -5,6 +5,10 @@ import java.util.Map;
 
 public class TMP {
     Map<String, String> eventsMap = new HashMap<>();
+    public void aClose(A a){
+        a.close();
+        System.out.printf("%s", a.close);
+    }
 
     @Test
     public void test(){
@@ -29,4 +33,27 @@ public class TMP {
         }
 
     }
+    @Test
+    public void test2(){
+        A a = new A("d");
+        System.out.println(a.close);
+        aClose(a);
+        a.testClose(a);
+        System.out.println(a.close);
+    }
+
+    @Test
+    public void test3(){
+        Object ob = new Object();
+        ob = 1;
+        System.out.println(ob.getClass().getSimpleName());
+
+        ob = true;
+        System.out.println(ob.getClass().getSimpleName());
+
+        ob = "str";
+        System.out.println(ob.getClass().getSimpleName());
+    }
+
+
 }

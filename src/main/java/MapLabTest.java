@@ -32,4 +32,12 @@ public class MapLabTest {
         System.out.println(map.isEmpty());
 
     }
+
+    @Test
+    public void CanOnlyMapKeyToString(){
+        Map<String, Object> map = new HashMap<>();
+        map.put("a", 1);
+        map.put("b", 2);
+        System.out.println(map.keySet().toString());
+    }
 }

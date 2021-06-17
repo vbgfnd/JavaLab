@@ -9,4 +9,15 @@ public class A {
     public void test(){
         System.out.println("A");
     }
+
+    int close = 0;
+    public A initClose(){
+        return this;
+    }
+    public void close(){
+        close += 1;
+    }
+    public void testClose(A a){
+        a.close();
+    }
 }
