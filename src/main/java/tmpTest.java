@@ -80,7 +80,7 @@ public class tmpTest {
         int i = (int)ob;
         System.out.println((int)ob);
 
-        ob = new A("b");
+        //ob = new A("b");
         System.out.printf("class=%s", ob.getClass().getSimpleName());
         A a = (A)ob;
         a.test();

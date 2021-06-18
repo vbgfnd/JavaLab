@@ -33,14 +33,14 @@ public class TMP {
         }
 
     }
-    @Test
+ /*   @Test
     public void test2(){
-        A a = new A("d");
+        //A a = new A("d");
         System.out.println(a.close);
         aClose(a);
         a.testClose(a);
         System.out.println(a.close);
-    }
+    }*/
 
     @Test
     public void test3(){

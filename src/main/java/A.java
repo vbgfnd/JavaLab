@@ -1,10 +1,13 @@
+import org.junit.Test;
+
 public class A {
     int i = 123;
+    String str_b = "123";
+    //A aa = new A();
+
+    public A(){}
+
     public final String str_a = this.getClass().getName();
-    String str_b = "";
-    public A(String b){
-        this.str_b = b;
-    }
 
     public void test(){
         System.out.println("A");
@@ -19,5 +22,10 @@ public class A {
     }
     public void testClose(A a){
         a.close();
+    }
+
+    @Test
+    public void test1(){
+        A a = new A();
     }
 }

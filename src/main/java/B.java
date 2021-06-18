@@ -1,7 +1,7 @@
 public class B extends A{
 
     B(){
-      super("a");
+      //super("a");
     }
 
     public void test(){
