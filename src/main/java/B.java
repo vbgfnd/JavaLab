@@ -1,8 +1,8 @@
 public class B extends A{
-    String str;
-    boolean boo;
-    double dou;
-    int anInt;
+    public String str;
+    public boolean boo;
+    public double dou;
+    public int anInt;
 
     B(){
       //super("a");

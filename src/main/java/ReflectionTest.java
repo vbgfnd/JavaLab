@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
 public class ReflectionTest {
@@ -10,6 +11,16 @@ public class ReflectionTest {
         for(Method method : methods){
             System.out.println(method.toString());
             System.out.println(methods.length);
+        }
+    }
+
+    @Test
+    public void reflectionTest1(){
+        C c = new C();
+        Field[] fields = c.getClass().getDeclaredFields();
+        for(Field field : fields){
+            field.setAccessible(true);
+            System.out.println(field.getType().getSimpleName());
         }
     }
 }

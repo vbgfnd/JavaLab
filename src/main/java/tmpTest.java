@@ -85,6 +85,11 @@ public class tmpTest {
         A a = (A)ob;
         a.test();
     }
+    @Test
+    public void ObjectConvertTestWithNull(){
+        Object ob = null;
+        System.out.println(ob.getClass().getSimpleName());
+    }
 
 
 }
