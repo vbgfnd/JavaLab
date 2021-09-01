@@ -1,5 +1,6 @@
 import org.junit.Test;
 
+import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -22,5 +23,19 @@ public class ReflectionTest {
             field.setAccessible(true);
             System.out.println(field.getType().getSimpleName());
         }
+    }
+
+    @Test
+    public void relectionTest3(){
+        Class c1 = int.class;
+        System.out.println(c1.getName());
+
+        Class c2 = Integer.class;
+        System.out.println(c2.getName());
+
+        Class c3 = Integer[].class;
+        System.out.println(c3.getName());
+
+
     }
 }

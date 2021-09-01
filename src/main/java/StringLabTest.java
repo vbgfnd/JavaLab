@@ -92,4 +92,10 @@ public class StringLabTest {
         //System.out.println(str.toString());
         System.out.println(str);
     }
+
+    @Test
+    public void StringTest5(){
+        Double d = 0.0;
+        System.out.printf("%s", d);
+    }
 }
