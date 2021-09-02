@@ -1,8 +1,10 @@
 import org.junit.Test;
 
+import java.io.*;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -76,5 +78,14 @@ public class TMP {
         System.out.println(ob.getClass().getSimpleName());
     }
 
+    @Test
+    public void test4() throws IOException {
+        String CONFIG_PATH = System.getProperty("config.path", "config.properties");
+        //System.out.printf(CONFIG_PATH);
+        InputStreamReader inReader = new InputStreamReader(new FileInputStream("C:\\Code\\JavaLab\\src\\main\\java\\test.txt"), Charset.forName("UTF-8"));
+        System.out.printf("%s", inReader.read());
+        inReader.close();
+
+    }
 
 }

@@ -15,5 +15,11 @@ public class JsonPathLabTest {
         System.out.println(str2);
     }
 
+    @Test
+    public void JsonPahTest1(){
+        String str1 =
+        JsonPath.with(strJson).get("totalpages");
+        System.out.printf(str1);
+    }
 
 }

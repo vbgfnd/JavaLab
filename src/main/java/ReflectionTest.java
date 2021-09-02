@@ -1,8 +1,10 @@
+import com.google.gson.Gson;
 import org.junit.Test;
 
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+
 
 public class ReflectionTest {
     @Test
@@ -35,6 +37,7 @@ public class ReflectionTest {
 
         Class c3 = Integer[].class;
         System.out.println(c3.getName());
+        Gson gson = new Gson();
 
 
     }
