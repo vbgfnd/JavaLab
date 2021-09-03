@@ -8,6 +8,8 @@ import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
 
+import static io.restassured.path.json.JsonPath.with;
+
 public class TMP {
     Map<String, String> eventsMap = new HashMap<>();
     public void aClose(A a){
@@ -80,12 +82,19 @@ public class TMP {
 
     @Test
     public void test4() throws IOException {
-        String CONFIG_PATH = System.getProperty("config.path", "config.properties");
-        //System.out.printf(CONFIG_PATH);
-        InputStreamReader inReader = new InputStreamReader(new FileInputStream("C:\\Code\\JavaLab\\src\\main\\java\\test.txt"), Charset.forName("UTF-8"));
-        System.out.printf("%s", inReader.read());
-        inReader.close();
+        String path = System.getProperty("user.dir");
+        String CONFIG_PATH = path + "/src/main/java/test.json";
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(CONFIG_PATH)));
+        String line;
+        String str = "";
+        while((line = bufferedReader.readLine()) != null){
+            str += line.replaceAll("\u00A0", "");
+        }
+        bufferedReader.close();
+        System.out.println(str);
 
+        String str2 = with(str).get("code").toString();
+        System.out.println(str2);
     }
 
 }
