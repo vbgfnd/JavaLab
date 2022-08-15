@@ -32,5 +32,6 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.30'
     compile group: 'org.slf4j', name: 'slf4j-log4j12', version: '1.7.30'
     compile "net.coding.api:coding-sdk-java:1.1.3"
+    implementation group: 'org.yaml', name: 'snakeyaml', version: '1.29'
     runtime group: 'mysql', name: 'mysql-connector-java', version: '8.0.25'
 }

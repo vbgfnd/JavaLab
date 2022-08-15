@@ -1,0 +1,21 @@
+userinfo:
+  owner:
+    email: liyuanming@coding.net
+    password: coding123@
+  manager:
+    email: test1@coding.test
+    password: 123456
+  member1:
+    email: test2@coding.test
+    password: 123456
+  member2:
+    email:
+    password:
+  member3:
+    email:
+    password:
+baseURI: http://testlym6874.staging-corp.coding.io
+basePath: /api
+mapProps:
+  email: xxx
+  password: ddd

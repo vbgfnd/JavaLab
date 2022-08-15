@@ -1,4 +1,4 @@
-import com.sun.org.apache.xpath.internal.operations.Bool;
+
 
 public class C extends B{
     public String str_c = null;
