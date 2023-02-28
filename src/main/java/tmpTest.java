@@ -91,5 +91,15 @@ public class tmpTest {
         System.out.println(ob.getClass().getSimpleName());
     }
 
+    @Test
+    public void testzzz(){
+        Integer n = 1;
+        String str;
+        for(int i = 1; i<=200; i++){
+            str = String.format("http://codingcorp.nh210aogt.dev.coding.io/api/platform/whiteip?ip=115.0.0.%d&remark=测试1&force=true&name=yyy&all_effect=false&resourceType=depot&resourceId=1,2,3,4&scope=网页端", i);
+            System.out.println(str+"\n");
+        }
+        
+    }
 
 }
